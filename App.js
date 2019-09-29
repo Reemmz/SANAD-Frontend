@@ -1,19 +1,26 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { createAppContainer } from 'react-navigation';
+import { createStackNavigator } from 'react-navigation-stack';
+import HomeScreen from './Screens/HomeScreen';
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-    </View>
-  );
-}
+import LoginScreen from './Screens/LoginScreen';
+import ResetPasswordScreen from './Screens/ResetPasswordScreen';
+import RegisterScreen from './Screens/RegisterScreen';
+import PostList from './Screens/PostList';
+import PostScreen from './Screens/PostScreen';
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+const AppNavigator = createStackNavigator({
+  Home: { screen: HomeScreen },
+  Login: { screen: LoginScreen },
+  ResetPassword: { screen: ResetPasswordScreen },
+  Register: { screen: RegisterScreen },
+  PostList: { screen: PostList },
+  Post: { screen: PostScreen },
+},
+  {
+    initialRouteName: 'Home',
+  }
+);
+
+const App = createAppContainer(AppNavigator);
+
+export default App;
