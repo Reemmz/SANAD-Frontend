@@ -129,7 +129,7 @@ class Register extends React.Component {
                       />
                       </Block>
                       </Block>
-                      </View>
+                      </View> 
 
                       <View>
                       <Text style={styles.baseText}>
